@@ -51,7 +51,7 @@ hold your hands, and look into your pretty eyes.`,
       image: "/character/six.png",
     },
     {
-      content: "Will you buy me food,i'm hungry gu ?",
+      content: "Will you buy me food,i'm hungry my love ?",
       image: "/character/seven.png",
     },
   ];
