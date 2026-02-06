@@ -3,6 +3,7 @@ import { useWindowSize } from "react-use";
 import Confetti from "react-confetti";
 import { motion } from "framer-motion";
 import { LogSnag } from "@logsnag/node";
+import { appConfig } from "./config";
 
 const logsnag = new LogSnag({
   token: "LOGSNAG_TOKEN",
@@ -20,41 +21,7 @@ const track = async () => {
 };
 
 function App() {
-  const steps = [
-    {
-      content: "Heyyyyy, lola.",
-      image: "/character/one.png",
-    },
-    {
-      content: `Recently, we met.
-      And somehow, you've been on my mind ever since.
-      `,
-      image: "/character/two.png",
-    },
-    {
-      content: `Then we went on our first date…And I realized—yep, I want this girl. For life.
-      `,
-      image: "/character/three.png",
-    },
-    {
-      content: `You're beautiful, you're smart, you're fun,
-and you make spending time together feel too short.`,
-      image: "/character/four.png",
-    },
-    {
-      content: `I look forward to when I'll see you again,
-hold your hands, and look into your pretty eyes.`,
-      image: "/character/five.png",
-    },
-    {
-      content: "So now I've got a question for you…",
-      image: "/character/six.png",
-    },
-    {
-      content: "Will you buy me food,i'm hungry my love ?",
-      image: "/character/seven.png",
-    },
-  ];
+  const steps = appConfig.steps;
   const [currentStep, setCurrentStep] = useState(0);
   const [sheWantsToBeMyValentine, setSheWantsToBeMyValentine] = useState(false);
   const { width, height } = useWindowSize();
