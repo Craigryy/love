@@ -17,35 +17,43 @@ export const defaultConfig: AppConfig = {
       image: "/character/one.png",
     },
     {
-      content: `I know recently you haven't been so well...
-Madonna University, your girls, Mmesoma...
-even money...`,
+      content: `I know how much you've cried and felt hurt...`,
       image: "/character/two.png",
     },
     {
-      content: `I just wanted to tell you how proud I am of you.`,
+      content: "But ,I just want to tell you how much I love you Mama Coco ✨💖 and how proud I am of you.",
       image: "/character/three.png",
     },
     {
-      content: `You are amazing, annoying, sometimes scary.
-But I wouldn't change any part of you.`,
+      content: "I don't know if words will ever truly capture how I feel about you. But I'll try.",
       image: "/character/four.png",
     },
     {
-      content: `You've handled everything with such strength,
-and I admire that about you.`,
+      content: `Because when I look at you... I don't just see beauty, I see kindness, I see strength, I see love, I see a heart worth protecting.`,
       image: "/character/five.png",
     },
     {
-      content: "So I got a question for you...",
+      content: "Your smile has a way of making everything feel lighter. You are beautiful in every sense of the word.",
       image: "/character/six.png",
     },
     {
-      content: "Will you buy me food?",
+      content: "The more I admire you, the more I appreciate you, the more I know you, the more my heart chooses you.",
+      image: "/character/seven.png",
+    },
+    {
+      content: "I may be selfish, and I don't know what the future holds, but I just want to spend more time with you, for I will always be grateful to have met you.",
+      image: "/character/one.png",
+    },
+    {
+      content: "So I have a very important question for you...",
+      image: "/character/six.png",
+    },
+    {
+      content: "Promise you will not leave me, because I can't leave you?",
       image: "/character/seven.png",
     },
   ],
-  title: "Mummy Tee",
+  title: "For Missesage 💖",
 };
 
 // Person 2 configuration - customize this for the second person
@@ -53,39 +61,47 @@ and I admire that about you.`,
 export const person2Config: AppConfig = {
   steps: [
     {
-      content: "Hey baby", // 👈 Change this message
+      content: "Hey baby",
       image: "/character/one.png",
     },
     {
-      content: `I know recently you haven't been so well...
-Madonna University, your girls, Mmesoma...
-even money...`, // 👈 Change this message
+      content: `I know how much you've cried and felt hurt...`,
       image: "/character/two.png",
     },
     {
-      content: `I just wanted to tell you how proud I am of you.`, // 👈 Change this message
+      content: "I just want to say how much I love you Mama Coco ✨💖 and how proud I am of you.",
       image: "/character/three.png",
     },
     {
-      content: `You are amazing, annoying, sometimes scary.
-But I wouldn't change any part of you.`, // 👈 Change this message
+      content: "I don't know if words will ever truly capture how I feel about you. But I'll try.",
       image: "/character/four.png",
     },
     {
-      content: `You've handled everything with such strength,
-and I admire that about you.`, // 👈 Change this message
+      content: `Because when I look at you... I don't just see beauty, I see kindness, I see strength, I see love, I see a heart worth protecting.`,
       image: "/character/five.png",
     },
     {
-      content: "So I got a question for you...", // 👈 Change this message
+      content: "Your smile has a way of making everything feel lighter. You are beautiful in every sense of the word.",
       image: "/character/six.png",
     },
     {
-      content: "Will you buy me food?", // 👈 Change this message
+      content: "The more I admire you, the more I appreciate you, the more I know you, the more my heart chooses you.",
+      image: "/character/seven.png",
+    },
+    {
+      content: "I may be selfish, and I don't know what the future holds, but I just want to spend more time with you, for I will always be grateful to have met you.",
+      image: "/character/one.png",
+    },
+    {
+      content: "So I have a very important question for you...",
+      image: "/character/six.png",
+    },
+    {
+      content: "Promise you will not leave me, because I can't leave you?",
       image: "/character/seven.png",
     },
   ],
-  title: "Mummy Tee", // 👈 Change the title if needed
+  title: "For Missesage 💖",
 };
 
 // Get config based on environment variable or default
@@ -102,4 +118,3 @@ const getConfig = (): AppConfig => {
 };
 
 export const appConfig = getConfig();
-

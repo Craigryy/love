@@ -2,34 +2,35 @@ import { useState, useEffect } from "react";
 import { useWindowSize } from "react-use";
 import Confetti from "react-confetti";
 import { motion } from "framer-motion";
-import { LogSnag } from "@logsnag/node";
 import { appConfig } from "./config";
 
-const logsnag = new LogSnag({
-  token: "LOGSNAG_TOKEN",
-  project: "PROJECT_NAME",
-});
-
-const track = async () => {
-  await logsnag.track({
-    channel: "yes",
-    event: "March 1st ",
-    description: "She said yes!",
-    icon: "💖",
-    notify: true,
-  });
-};
+// Assuming you have a logsnag instance configured elsewhere if needed.
+// If you still want to track, you can define the new track function:
+// import { LogSnag } from "@logsnag/node";
+// const logsnag = new LogSnag({
+//   token: "YOUR_LOGSNAG_TOKEN",
+//   project: "YOUR_PROJECT_NAME",
+// });
+// const track = async () => {
+//   await logsnag.track({
+//     channel: "love-confession",
+//     event: "Love for Missesage",
+//     description: "The final message was shown!",
+//     icon: "💖",
+//     notify: true,
+//   });
+// };
 
 function App() {
   const steps = appConfig.steps;
   const [currentStep, setCurrentStep] = useState(0);
-  const [sheWantsToBeMyValentine, setSheWantsToBeMyValentine] = useState(false);
+  const [finalMessageVisible, setFinalMessageVisible] = useState(false);
   const { width, height } = useWindowSize();
 
   useEffect(() => {
     const imagePaths = [
       ...steps.map((step) => step.image),
-      "/character/yayyyy.png",
+      "/character/mama-coco-yay.png",
     ];
 
     imagePaths.forEach((path) => {
@@ -40,7 +41,7 @@ function App() {
 
   return (
     <>
-      {sheWantsToBeMyValentine && (
+      {finalMessageVisible && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -54,7 +55,7 @@ function App() {
               transition={{ delay: 0.3, type: "spring" }}
               className="text-white text-4xl font-bold"
             >
-              Yayyyyyyy!!!!!
+              yeayyyyyyyyyyyyy
             </motion.h1>
             <img
               src="/character/yayyyy.png"
@@ -84,7 +85,7 @@ function App() {
           {steps[currentStep].content}
         </motion.div>
 
-        {currentStep < 6 && (
+        {currentStep < steps.length - 1 && (
           <>
             <button
               onClick={() => setCurrentStep(currentStep + 1)}
@@ -102,12 +103,12 @@ function App() {
             )}
           </>
         )}
-        {currentStep === 6 && (
+        {currentStep === steps.length - 1 && (
           <>
             <button
               onClick={async () => {
-                setSheWantsToBeMyValentine(true);
-                await track();
+                setFinalMessageVisible(true);
+                // await track(); // Uncomment if you want to track this event
               }}
               className="bg-white text-[#FFC5D3] py-3 text-xl rounded-xl w-full mt-10 font-semibold"
             >
@@ -116,8 +117,8 @@ function App() {
 
             <button
               onClick={async () => {
-                setSheWantsToBeMyValentine(true);
-                await track();
+                setFinalMessageVisible(true);
+                // await track(); // Uncomment if you want to track this event
               }}
               className="bg-white text-[#FFC5D3] py-3 text-xl rounded-xl w-full mt-2 font-semibold"
             >
